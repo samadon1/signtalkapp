@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="test">
+        {% if session %}
+        <h1> {{ session }} </h1>
+        {% else %}
+        <h1>Nope</h1>
+        {% endif %}
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function refresh() {
+                var div = $('#test'),
+                    divHtml = div.html();
+
+                div.html(divHtml);
+            }
+
+            setInterval(function () {
+                refresh()
+            }, 10); //300000 is 5minutes in ms
+        })
+    </script>
+</body>
+
+</html>

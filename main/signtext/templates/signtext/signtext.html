@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/styles.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div class="title">
+        <a href="{% url 'home' %}">
+            <button class="btn btn-dark action-buttons">
+                <p>Back to Main Page</p>
+            </button>
+        </a>
+
+        <h1>Translate</h1>
+        <a href="{% url 'textsign' %}">
+            <button class="btn btn-primary action-buttons">
+                <p>Switch to Text-Sign</p>
+            </button>
+        </a>
+    </div>
+
+    <div class="feedback-text">
+        <h6> Start translating by showing your hands</h6>
+
+    </div>
+
+    <!-- {{ sentence }} -->
+
+    <div class="video-container">
+        <!-- <img src="https://i.ytimg.com/vi/Lr4PCtUq_uk/maxresdefault.jpg" alt=""> -->
+        <img src="{% url 'live_feed' %}">
+    </div>
+
+    <div class="feedback-text">
+        <!-- <p> {{ sentence }}</p> -->
+        <p id="output"></p>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <script>
+        function loadlink() {
+            let url = "/update_session/";
+            $.ajax({
+                url: 'update_session',
+                type: "GET",
+                dataType: "json",
+                success: (data) => {
+                    // console.log(data);
+                    // JSON = JSON.stringify(data)
+                    var str = '';
+                    for (var p in data) {
+                        if (Object.prototype.hasOwnProperty.call(data, p)) {
+                            str +=  data[p] + ' \n';
+                        }
+                    }
+
+                    document.getElementById('output').innerHTML = str.replaceAll(',', ' ');
+                },
+                error: (error) => {
+                    console.log(error);
+                }
+            });
+        }
+
+        loadlink(); // This will run on page load
+        setInterval(function () {
+            loadlink() // this will run after every 5 seconds
+        }, 100);
+    </script>
+
+
+</body>
+
+</html>

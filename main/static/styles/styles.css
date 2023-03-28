@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+    /* padding: 0 10%; */
+}
+
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    margin: 4% 5% 1% 4%;
+}
+
+.feedback-text {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.0);
+    padding: 8px 0 3px 0;
+    border-radius: 25px;
+    
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+
+    margin: 1%;
+
+    background-image: url('https://100.arri.com/static/img/overview_loading.9868836.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 500px;
+    height: 380px;
+    /* width: 100%; */
+}
+
+.video-container > img {
+    /* width: 500px; */
+}
+
+.action-buttons {
+    height: 40px;
+}
+
+.textarea {
+    margin: 20px ;
+    width: 80%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+  }
+
+  .text-grid {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .home-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-top:  190px;
+    padding-left: 50px;
+  }
+
+  .home-header > h1 {
+    font-size: 100px;
+    color: #0275d8;
+
+  }
+
+  .home-header > p {
+    font-size: 30px;
+
+  }
+
+  .home-header > a {
+    margin-right: 10px;
+    padding: 10px;
+    margin-top: 40px;
+
+  }
+
+  .text-img {
+    margin-left: 80px;
+    width: 400px;
+    height: 400px;
+  }
+
+  .card-display {
+    display: inline-block;
+  }
+
+  .main-page{
+    padding: 30px;
+  }
+
+
+  .my-card {
+    margin: 30px;
+  }
+
+  .main-text {
+    /* display: flex; */
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 80px;
+    margin-top: 50px;
+  }
+
+  .card-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-wrapper {
+    background-image: url("");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    margin: 0;
+  }
+
+  .categories {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px ;
+  }
+
+  .categories > a {
+    margin: 0 30px;
+  }
+
+  .learn-img {
+    
+    text-align: center;
+    justify-content: center;
+  }
+
+  .learn-controls {
+    margin-top: 30px;
+  }
+
+  .practice-img  {
+    margin-top: 100px;
+    margin-left: 50px;
+  }
+
+  .gif-img {
+    width: 450px;
+    margin-left: 100px;
+
+  }

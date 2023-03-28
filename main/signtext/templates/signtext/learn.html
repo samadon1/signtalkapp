@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/styles.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div class="title">
+        <a href="{% url 'home' %}">
+            <button class="btn btn-dark action-buttons">
+                <p>Back to Main Page</p>
+            </button>
+        </a>
+
+        <h1>Learn to Sign</h1>
+        <a href="{% url 'textsign'%}">
+            <button class="btn btn-primary action-buttons">
+                <p>Switch to Dictionary</p>
+            </button>
+        </a>
+    </div>
+
+    <div class="feedback-text">
+        <div class="categories" >
+            <a href=""><p>Medical procedures</p></a>
+            <a href=""><p>Remedies</p></a>
+            <a href=""><p>Conditions</p></a>
+            <a href=""><p>Emergency room talk</p></a>
+        </div>
+
+        
+
+    </div>
+    
+
+    
+
+    <div class="learn-img" >
+        <div>
+            <br>
+            <h1>Ear Infection</h1>
+            <br>
+            <img  src="../../static/ear.png" alt="">
+            <br>
+        </div>
+
+        <div class="learn-controls" >
+            <button class="btn btn-outline-primary" >Previous: Calm down</button>
+            <a href="{% url 'practice' %}">
+                <button  class="btn btn-primary" >Practice</button>
+            </a>
+            <button class="btn btn-outline-primary" >Next: Breathe</button>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

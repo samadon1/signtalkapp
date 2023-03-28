@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/styles.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/kalidokit@1.1/dist/kalidokit.umd.js"></script>
+    
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div class="title">
+        <a href="{% url 'home' %}">
+            <button class="btn btn-dark action-buttons">
+                <p>Back to Main Page</p>
+            </button>
+        </a>
+
+        <h1>Translate to Sign</h1>
+        <a href="{% url 'signtext' %}">
+            <button class="btn btn-primary action-buttons">
+                <p>Switch to Sign-Text</p>
+            </button>
+        </a>
+    </div>
+
+    <div class="feedback-text">
+        <h6> Start typing...</h6>
+
+    </div>
+
+    <!-- {{ sentence }} -->
+
+    <div class="text-grid">
+
+        <div>
+
+        <!-- <p>Type text: </p> -->
+        <select name="input-type" id="input-type">
+            <option value="volvo">Text</option>
+            <option value="saab">Voice</option>
+          </select>
+        <form method="GET" action="{% url 'textsign' %}">
+            {% csrf_token %}
+            <input  name="q" class="textarea" type="text">
+        </form>
+        
+    </div>
+
+        <div>
+            {% if word %}
+                <img class="gif-img" src="../../static/gifs/{{word}}" alt="" >
+            {% else %}
+            <img class="text-img" src="https://signsci.terc.edu/video/images/poster_Lou.jpg" alt="">
+            {% endif %}
+        </div>
+
+    </div>
+
+</body>
+
+</html>
