@@ -20,23 +20,18 @@
 <body>
 
     <div class="title">
-        <a href="{% url 'home' %}">
-            <button class="btn btn-dark action-buttons">
-                <p>Back to Main Page</p>
-            </button>
-        </a>
-
-        <h1>Translate to Sign</h1>
         <a href="{% url 'signtext' %}">
             <button class="btn btn-primary action-buttons">
-                <p>Switch to Sign-Text</p>
+                <p>Switch to text-to-sign</p>
             </button>
         </a>
-    </div>
 
-    <div class="feedback-text">
-        <h6> Start typing...</h6>
-
+        <h1 style="color: #0275d8;">Text to Ghanaian Sign Language</h1>
+        <a href="{% url 'select_solution' %}">
+            <button class="btn btn-dark action-buttons">
+                <p>Main menu</p>
+            </button>
+        </a>
     </div>
 
     <!-- {{ sentence }} -->
@@ -44,15 +39,9 @@
     <div class="text-grid">
 
         <div>
-
-        <!-- <p>Type text: </p> -->
-        <select name="input-type" id="input-type">
-            <option value="volvo">Text</option>
-            <option value="saab">Voice</option>
-          </select>
         <form method="GET" action="{% url 'textsign' %}">
             {% csrf_token %}
-            <input  name="q" class="textarea" type="text">
+            <input placeholder="Enter text"  name="q" class="textarea" type="text">
         </form>
         
     </div>

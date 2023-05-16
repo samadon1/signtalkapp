@@ -20,11 +20,19 @@
   <div class="home-grid">
     <div class="home-header">
       <h1>SignTalk</h1>
-    <p>  Bridging the communication gap for effective communication between the speech and hearing impaired and doctors.</p>
+    <p>  Bridging the communication gap for effective communication between the speech and hearing impaired and doctors.
 
-    <a href="{% url 'signtext'  %}" class="btn btn-primary">Sign To Text</a>
+    </p>
+
+    <a  href="{% url 'select_user'  %}" class="btn btn-outline-primary">
+      <div style="padding: 10px 50px; font-size: 20px;">
+      Get Started Now
+    </div></a>
+
+
+    <!-- <a href="{% url 'signtext'  %}" class="btn btn-primary">Sign To Text</a>
     <a href="{% url 'textsign'  %}" class="btn btn-primary">Text / Speech To Sign</a>
-    <a href="{% url 'learn'  %}" class="btn btn-primary">Learning Hub</a>
+    <a href="{% url 'learn'  %}" class="btn btn-primary">Learning Hub</a> -->
     </div>
     <div>
       <img style="width: 100%; " src="https://speaksign.netlify.app/img/person.png" alt="">

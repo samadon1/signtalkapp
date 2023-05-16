@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/styles.css' %}">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <title>Document</title>
+
+</head>
+
+<body >
+    <div>
+        
+        <div class="progress-close">
+            <div id="progressbar">
+                <div></div>
+              </div>
+              <div>
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                      </svg>
+                </a>
+              </div>
+        </div>
+
+        {% for sign, video in signs %}
+        <div>
+            <div class="video-row-wrapper">
+                <div class="video-row">
+                    <div  style=" height: 320px; border-radius: 8px; overflow: hidden; " >
+                        <video style="border-radius: 50px; 
+                        overflow: hidden;
+                        "  loop="true" autoplay="autoplay" muted width="100%" height="80%" >
+                            <source  src="../../../static/Videos/{{ video }}" type="video/mp4"> </source> 
+                        </video>
+                    </div>
+                    <div>
+                        <div style="height: 250px; width: 410px;" class="video-container">
+                            <!-- <img src="https://i.ytimg.com/vi/Lr4PCtUq_uk/maxresdefault.jpg" alt=""> -->
+                            <img style="border-radius: 50px;" width="100%" height="100%" src="{% url 'live_feed' %}">
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+    
+            <div class="instruction-text">
+                <div class="instruction">
+                    <p>Repeat this sign on camera</p>
+                </div>
+                <div class="sign-text">
+                    
+                    <p>{{ sign }}</p>
+
+                    
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- <div class="pagination">
+            <span class="step-links">
+                {% if signs.has_previous %}
+                    <a href="?page={{ signs.previous_page_number }}">&lsaquo; previous</a>
+                {% endif %}
+    
+            </span>
+        </div> -->
+
+        <div class="page-links ">
+            <a href=""><p>The app doesn't recognize the sign?</p></a>
+            {% if signs.has_next %}
+                    <a href="?page={{ signs.next_page_number }}">Skip &rsaquo;</a>
+                {% endif %}
+
+        </div>
+        
+    </div>
+
+</body>
+
+</html>

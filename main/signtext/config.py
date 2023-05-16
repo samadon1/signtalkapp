@@ -1,6 +1,6 @@
 sequence = []
 predictions = []
-new_pred = "Translation will appear here"
+new_pred = "Translation will show here..."
 sentence = []
 threshold = 0.5
 second_image = None

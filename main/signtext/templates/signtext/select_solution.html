@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/styles.css' %}">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <title>Document</title>
+
+</head>
+
+<body class="solution-body">
+
+    <div>
+
+
+        <div class="solution-card-wrapper">
+            <div class="solution-card card-1">
+                <h3>Translate</h3>
+                <hr>
+               <div class="solution-options">
+                <p>Sign language to text</p>
+                <p>Speech to sign language</p>
+                <p>Speech to  text</p>
+               </div>
+               <br>
+               <br>
+               <a  href="" class="btn btn-outline-primary">
+                   <div style="padding: 10px 50px; font-size: 20px;">
+                   Open app 
+                 </div></a>
+            </div>
+
+            <div class="solution-card card-1">
+                <h3>Learn</h3>
+                <hr>
+                <div class="solution-options">
+                    <p>Learn the Ghanaian Sign Language (GSL)</p>
+                      <p>Practice and learn to sign GSL in the healthcare context </p>
+                </div>
+                <br>
+                <br>
+                <a  href="{% url 'learn_main'  %}" class="btn btn-outline-primary">
+                    <div style="padding: 10px 50px; font-size: 20px;">
+                    Open app 
+                  </div></a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

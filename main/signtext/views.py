@@ -18,6 +18,9 @@ from django.contrib.sessions.backends.db import SessionStore
 from PIL import Image
 import requests
 
+from django.core.paginator import Paginator
+
+
 s = SessionStore()
 
 
@@ -59,14 +62,15 @@ def update_session(request):
         if is_ajax:
             if request.method == 'GET':
 
-                response = requests.post("https://hnmensah-ghanaian-language-translator.hf.space/api/predict", json={
-                    "data": [
-                        "English",
-                        "Asante",
-                        s['new_pred'],
-                ]}).json()
+                # response = requests.post("https://hnmensah-ghanaian-language-translator.hf.space/api/predict", json={
+                #     "data": [
+                #         "English",
+                #         "Asante",
+                #         s['new_pred'],
+                # ]}).json()
 
-                data = str(s['new_pred']) + " - " + str(response["data"][0])
+                # data = str(s['new_pred']) + " - " + str(response["data"][0])
+                data = str(s['new_pred'])
                 
                 # new_pred = data
                 print(data)
@@ -139,7 +143,7 @@ def gen(request, camera):
         yield(b'--frame\r\n'
                 b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
         
-        get_landmarks_predictions(request, image)
+        # get_landmarks_predictions(request, image) -- change this 
         request.session.modified = True
 
 
@@ -216,6 +220,52 @@ def textsign(request):
 
 def index(request):
     return render(request, 'signtext/index.html')
+
+def select_user(request):
+    return render(request, 'signtext/select_user.html')
+
+def select_solution(request):
+    return render(request, 'signtext/select_solution.html')
+
+def learn_main(request):
+    categories = ["Pregnancy & Reproduction", "Emergency", "Medical conditions", "Remedies", "Medical procedures", "General : Health"]
+
+    context = {
+        "categories": categories
+    }
+    return render(request, 'signtext/learn_main.html', context)
+
+def learn_page(request, pk):
+
+    category_pair = {
+        "Pregnancy & Reproduction": [["Pregnancy","please.mp4"], ["Baby","ted.mp4"], ["Labor","https://youtube.com"], ],
+        "Emergency": [["Emergency","https://youtube.com"], ["Labor","https://youtube.com"]],
+        "Medical conditions": [["Conditions","https://youtube.com"], ["Labor","https://youtube.com"]],
+        "Remedies": [["Remedies","https://youtube.com"], ["Labor","https://youtube.com"]],
+        "Medical procedures": [["Medical","https://youtube.com"], ["Labor","https://youtube.com"]],
+        "General : Health": [["Health","https://youtube.com"], ["Labor","https://youtube.com"]]
+    }
+
+    signs = category_pair[pk]
+
+    p = Paginator(signs, 1)
+
+    page = request.GET.get('page')
+    if not page:
+        page = 1
+
+    object_list = p.page(page)
+
+
+
+    context = {
+        "signs" : object_list
+    }
+    return render(request, 'signtext/learn_page.html', context)
+
+
+
+
     
 
 def learn(request):

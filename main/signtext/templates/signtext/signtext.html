@@ -18,36 +18,51 @@
 <body>
 
     <div class="title">
-        <a href="{% url 'home' %}">
-            <button class="btn btn-dark action-buttons">
-                <p>Back to Main Page</p>
-            </button>
-        </a>
-
-        <h1>Translate</h1>
         <a href="{% url 'textsign' %}">
             <button class="btn btn-primary action-buttons">
-                <p>Switch to Text-Sign</p>
+                <p>Switch to text-to-sign</p>
+            </button>
+        </a>
+
+        <h1 style="color: #0275d8;">Ghanaian Sign Language Translator</h1>
+        <a href="{% url 'select_solution' %}">
+            <button class="btn btn-dark action-buttons">
+                <p>Main menu</p>
             </button>
         </a>
     </div>
 
-    <div class="feedback-text">
+    <!-- <div class="feedback-text">
         <h6> Start translating by showing your hands</h6>
 
-    </div>
+    </div> -->
 
     <!-- {{ sentence }} -->
 
-    <div class="video-container">
-        <!-- <img src="https://i.ytimg.com/vi/Lr4PCtUq_uk/maxresdefault.jpg" alt=""> -->
-        <img src="{% url 'live_feed' %}">
-    </div>
+    <!-- <div style="display: flex; justify-content: space-between;">
+        <div>
+            <h1 class="translate-main-header">Sign Language Translator</h1>
+        </div>
+        <div style="justify-content: center; align-items: center;">
+            <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                  </svg>
+                  </a>
+        </div>
+    </div> -->
 
-    <div class="feedback-text">
-        <!-- <p> {{ sentence }}</p> -->
-        <p id="output"></p>
-
+    <div class="text-grid">
+        <div  class="video-container">
+            <!-- <img src="https://i.ytimg.com/vi/Lr4PCtUq_uk/maxresdefault.jpg" alt=""> -->
+            <img style="border-radius: 50px;" src="{% url 'live_feed' %}">
+        </div>
+    
+        <div class="feedback-text">
+            <!-- <p> {{ sentence }}</p> -->
+            <p id="output"></p>
+    
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

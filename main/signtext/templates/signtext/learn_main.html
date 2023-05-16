@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/styles.css' %}">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <title>Document</title>
+
+</head>
+
+<body >
+    <h1 class="learn-main-header">Categories</h1>
+
+    <div class="category-body">
+    
+
+    <div class="categories-wrapper">
+
+        {% for category in categories %}
+        <a style="text-decoration: none; " href="{% url 'learn_page' category %}">
+            <div class="learn-card" >
+                <h3>{{ category }}</h3>
+                <p>Lorem ipsum of some Emergency</p>
+                <!-- <br> -->
+                <hr >
+                <div class="learn-card-bottom">
+                    <p>50% complete</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+
+    </div>
+
+</body>
+
+</html>

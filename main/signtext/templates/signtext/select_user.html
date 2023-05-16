@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/styles.css' %}">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <title>Document</title>
+
+</head>
+
+<body class="select-user-body">
+
+  <div >
+
+    <div class="user-cards">
+        <div class="">
+            <a style="text-decoration: none;" href="{% url 'select_solution'  %}">
+                <div style="display: grid;
+            grid-template-columns: 50% 50%;
+            " class="card">
+                <div>
+                    <h3>Health worker</h3>
+                    <p>Communicate effectively with your patients</p>
+
+                </div>
+
+                <div style="padding-left: 300px;">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <i class="bi bi-arrow-right"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                    <!-- <button class="btn btn-primary"> Continue</button> -->
+                </div>
+                
+            </div>
+            </a>
+
+            <a style="text-decoration: none;" href="" tyle="text-decoration: none;">
+                <div style="display: grid;
+            grid-template-columns: 50% 50%;
+            " class="card">
+                <div>
+                    <h3>Patient</h3>
+                    <p>Communicate and understand medical instructions</p>
+
+                </div>
+
+                <div style="padding-left: 300px;">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <i class="bi bi-arrow-right"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                    <!-- <button class="btn btn-primary"> Continue</button> -->
+                </div>
+                
+            </div>
+            </a>
+
+
+          </div>
+    </div>
+    
+  </div>
+
+
+</body>
+
+</html>

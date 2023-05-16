@@ -4,6 +4,11 @@ from . import views
 
 urlpatterns = [
     path('home', views.index, name='home'),
+    path('select_user', views.select_user, name='select_user'),
+    path('select_solution', views.select_solution, name='select_solution'),
+    path('learn_main', views.learn_main, name='learn_main'),
+    path('learn_page/<str:pk>/', views.learn_page, name='learn_page'),
+
     path('textsign', views.textsign, name='textsign'),
     path('signtext', views.signtext, name='signtext'),
     path('learn', views.learn, name='learn'),
