@@ -12,7 +12,7 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <script src="https://cdn.jsdelivr.net/npm/kalidokit@1.1/dist/kalidokit.umd.js"></script>
-    
+
     <title>Document</title>
 
 </head>
@@ -39,16 +39,16 @@
     <div class="text-grid">
 
         <div>
-        <form method="GET" action="{% url 'textsign' %}">
-            {% csrf_token %}
-            <input placeholder="Enter text"  name="q" class="textarea" type="text">
-        </form>
-        
-    </div>
+            <form method="GET" action="{% url 'textsign' %}">
+                {% csrf_token %}
+                <input placeholder="Enter text" name="q" class="textarea" type="text">
+            </form>
+
+        </div>
 
         <div>
             {% if word %}
-                <img class="gif-img" src="../../static/gifs/{{word}}" alt="" >
+            <img style="border-radius: 50px;" class="gif-img" src="../../static/gifs/{{word}}" alt="">
             {% else %}
             <img class="text-img" src="https://signsci.terc.edu/video/images/poster_Lou.jpg" alt="">
             {% endif %}

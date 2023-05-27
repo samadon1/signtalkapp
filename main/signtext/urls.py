@@ -8,6 +8,9 @@ urlpatterns = [
     path('select_solution', views.select_solution, name='select_solution'),
     path('learn_main', views.learn_main, name='learn_main'),
     path('learn_page/<str:pk>/', views.learn_page, name='learn_page'),
+    path('hospital_page', views.hospital_page, name='hospital_page'),
+    path('community', views.community, name='community'),
+    path('community_chat', views.community_chat, name='community_chat'),
 
     path('textsign', views.textsign, name='textsign'),
     path('signtext', views.signtext, name='signtext'),

@@ -60,6 +60,12 @@ body {
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.0);
 }
 
+textarea:focus, input:focus{
+ 
+  outline: none;
+}
+
+
 .text-grid {
   margin: 50px;
   display: grid;
@@ -77,13 +83,13 @@ body {
 .home-grid {
   display: grid;
   grid-template-columns: 50% 50%;
-  padding-top: 190px;
+  padding-top: 130px;
   padding-left: 50px;
 }
 
 .home-header>h1 {
   font-size: 100px;
-  color: #0275d8;
+  color: 	#0D6EFD;
 
 }
 
@@ -373,6 +379,56 @@ body {
 .progress-close > div > a {
   margin-left: 200px;
 }
+
+.hospital-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 150px;
+
+}
+
+.hospital-body {
+  padding: 50px 180px;
+
+}
+
+.community-body {
+  padding: 50px 20%;
+  /* padding: 50px 20%; */
+}
+
+.community-header {
+  display: flex;
+  justify-content: center;
+  padding: 50px 160px 0px;
+  text-align: center;
+  
+}
+
+.community-header > h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.community-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.community-body {
+  padding: 30px;
+
+}
+
+.chat-cards {
+  border-top: solid 1px rgb(216, 216, 216);
+  /* border-bottom: solid 1px grey; */
+  padding: 20px;
+}
+
+.chat-cards > 
+
+
 
 .learn-card > p {
   /* padding: 20px; */

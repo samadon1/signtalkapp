@@ -265,11 +265,34 @@ def learn_page(request, pk):
 
 
 
+def hospital_page(request):
+    hospitals = [
+        ["Komfo Anokye Teaching Hospital", "Ashanti Region", "https://www.google.com/maps/dir/6.9723244,-1.4716475/komfo+anokye+hospital/@6.8303378,-1.6584845,11z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0xfdb96fa87e87323:0xf47a8c98b1dd0923!2m2!1d-1.6291939!2d6.6975237"],
+        ["Asante Mampong Government Hospital", "Ashanti Region", ""],
+        ["Korle Bu Teaching Hospital", "Greater Accra Region", ""],
+        ["37 Military Hospital", "Greater Accra Region", ""],
+        ["Effia Nkwanta Regional Hospital", "Western Region", ""],
+        ["Essikado Hospital", "Western Region", ""],
+        ["Ho Municipal Hospital", "Volta Region", ""],
+        ["Bibiani Government Hospital", "Western Region", ""],
 
-    
+    ]
+
+    context = {
+        "hospitals" : hospitals
+    }
+
+    return render(request, 'signtext/choose_hospital.html', context)
+
 
 def learn(request):
     return render(request, 'signtext/learn.html')
+
+def community(request):
+    return render(request, 'signtext/community.html')
+
+def community_chat(request):
+    return render(request, 'signtext/community_chat.html')
 
 
 

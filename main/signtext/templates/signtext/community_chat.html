@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/styles.css' %}">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <title>Document</title>
+
+</head>
+
+<body >
+    <nav style="padding: 10px 50px;" class="navbar navbar-expand-lg navbar-light bg-light">
+        <a style="font-weight: bold;" class="navbar-brand" href="{% url 'home' %}">SignTalk</a>
+      
+        <div class="collapse navbar-collapse justify-content-end" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <!-- <button style="background-color: rgb(255, 218, 149);" class="btn">
+                <a style="font-weight: bold;" class="nav-link" href="{% url 'community' %}">Join the community</a>
+              </button> -->
+            </li>
+            <li class="nav-item">
+              <button class="btn" ><a class="nav-link" href="#">Home</a></button>
+            </li>
+            <li class="nav-item">
+             <button class="btn">
+                <a class="nav-link" href="#">About Us</a>
+             </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="community-body">
+        <h1 style="font-weight: bold; color:  #0d6efd;;">SignTalk Community</h1>
+        <br><br>
+    <div class="community-wrapper">
+        <div style="padding-right: 60px;">
+            <h7>Category</h7>
+            <br>
+            <div class="chat-cards">
+                
+                <h4>Healthcare Interpreters</h4>
+                <p>Find, contact and book a diverse pool of interpreters for your health facility</p>
+            </div>
+            <div class="chat-cards">
+                <h4>SignTalk Crowdsource</h4>
+                <p>Detect mistakes, make corrections and contribute data to SignTalk</p>
+            </div>
+            <div class="chat-cards">
+                <h4>Learn</h4>
+                <p>Use this category to ask any questions related to our Learn page or organize study groups.</p>
+            </div>
+
+        </div>
+        <div  style="padding-right: 60px;">
+            <h7>Topics - Latest</h7>
+            <br>
+            <div class="chat-cards"> 
+                <img style="margin-right: 10px; float: left; width: 80px; " src="data:image/jpeg;base64,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" alt="">
+                <h4>Another reason why all this matters</h4>
+                <p style=" color: #0d6efd;">◉ Feedback</p>
+            </div>
+            <div class="chat-cards">
+                <img style="margin-right: 10px; float: left; width: 80px; " src="https://www.nicepng.com/png/detail/138-1380897_circle-headshot-kimberly-j-brown.png" alt="">
+                <h4>First Healthcare Sign Language Conference in Ghana </h4>
+                <p style=" color: rgb(255, 166, 0);">◉ Event</p>
+            </div>
+            <div class="chat-cards">
+                <img style="margin-right: 10px; float: left; width: 80px; " src="https://csusystem.edu/wp-content/uploads/sites/7/2020/06/NEasley-HS-circle.png" alt="">
+                <h4>Interpreter role @ KATH</h4>
+                <p style=" color: rgb(255, 38, 0);">◉ Opportunity</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

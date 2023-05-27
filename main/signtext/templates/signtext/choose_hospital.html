@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/styles.css' %}">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <title>Document</title>
+
+</head>
+
+<body >
+    {% include 'signtext/navbar.html' %} 
+    
+
+    <div>
+
+        <div class="hospital-body" >
+            
+        <h1>Choose a hospital</h1>
+        <p>These hospitals provide inclusive healthcare services for the deaf - Including SignTalk</p>
+        </div>
+
+    <div class="hospital-wrapper" >
+        {% for hospital in hospitals %}
+        <div class="card" style="width: 18rem;">
+            <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
+            <div class="card-body">
+              <h5 class="card-title">{{ hospital.0 }}</h5>
+              <p class="card-text">Location: {{ hospital.1 }}</p>
+              <a target="_blank" href="{{ hospital.2 }}" class="btn btn-primary"> 🗺️ Directions</a>
+              <a target="_blank" href="{{ hospital.2 }}" class="btn btn-outline-primary"> 📞 Call</a>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+
+    </div>
+
+</body>
+
+</html>
