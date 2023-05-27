@@ -44,15 +44,33 @@
                 <input placeholder="Enter text" name="q" class="textarea" type="text">
             </form>
 
+            <div class="examples-wrapper">
+                <p> Examples:</p>
+                <ul>
+                <li>Good morning</li>
+                <li>Let's start by getting some more information.</li>
+                <li>Are you experiencing any pain ? </li>
+                <li>Can you tell me more about your symptoms ?</li>
+            </ul>
+            </div>
+
         </div>
 
         <div>
             {% if word %}
             <img style="border-radius: 50px;" class="gif-img" src="../../static/gifs/{{word}}" alt="">
             {% else %}
-            <img class="text-img" src="https://signsci.terc.edu/video/images/poster_Lou.jpg" alt="">
+            <img class="text-img" src="../../static/images/avatarme.png" alt="">
+            
             {% endif %}
+
+            <div class="avatar-btn">
+                <button class="btn btn-primary " >3D Avatar</button> 
+                <button class="btn btn-secondary " >Synthetic Human</button>
+                <button class="btn btn-danger" >Pose Landmarks</button>
+            </div>
         </div>
+        
 
     </div>
 

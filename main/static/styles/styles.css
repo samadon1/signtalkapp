@@ -107,8 +107,20 @@ textarea:focus, input:focus{
 
 .text-img {
   margin-left: 80px;
-  width: 400px;
-  height: 400px;
+
+  width: 80%;
+  border-radius: 10%;
+  /* height: 400px; */
+}
+
+.avatar-btn {
+  padding: 20px 0 0 150px;
+}
+
+.examples-wrapper {
+  padding-top: 30px;
+  padding-left: 30px;
+  color: rgba(114, 114, 114, 0.836);
 }
 
 .card-display {
