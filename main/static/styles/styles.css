@@ -375,7 +375,7 @@ textarea:focus, input:focus{
 }
 
 #progressbar>div {
-  background-color: #0d6efd;
+  background-color: rgb(255, 208, 121);
   width: 40%;
   /* Adjust with JavaScript */
   height: 20px;

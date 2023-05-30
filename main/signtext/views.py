@@ -108,7 +108,7 @@ def get_landmarks_predictions(request, frame):
         s['feedback'] = "Sign detected"
         s['sequence'].append(landmarks) #if True, add to sequence
     
-    else: # If no hands show, check if it's end of sign or no sign at all
+    else: # If no hands shown, check if it's end of sign or no sign at all
         if not len(s['sequence']):  # if no sign from hands
             s['feedback'] = "Please place your hand in the camera frame to begin detection"            # continue to next frame
             
@@ -200,6 +200,7 @@ def textsign(request):
 
     context = {}
     image = None
+
     if word != "":
         word = word.upper() + ".gif"
 
@@ -238,7 +239,7 @@ def learn_main(request):
 def learn_page(request, pk):
 
     category_pair = {
-        "Pregnancy & Reproduction": [["Pregnancy","please.mp4"], ["Baby","ted.mp4"], ["Labor","https://youtube.com"], ],
+        "Pregnancy & Reproduction": [["Breastfeed","Breastfeed.mp4"], ["Health","Health.mp4"], ["Labor","Labor.mp4"], ["Miscarriage","Miscarriage.mp4"], ["Breast","Breast.mp4"], ["Medicine","Medicine.mp4"], ],
         "Emergency": [["Emergency","https://youtube.com"], ["Labor","https://youtube.com"]],
         "Medical conditions": [["Conditions","https://youtube.com"], ["Labor","https://youtube.com"]],
         "Remedies": [["Remedies","https://youtube.com"], ["Labor","https://youtube.com"]],
@@ -256,10 +257,12 @@ def learn_page(request, pk):
 
     object_list = p.page(page)
 
+    print(len(signs))
 
 
     context = {
-        "signs" : object_list
+        "signs" : object_list,
+        "percent": str( int(page) / int(p.count) * 100) + "%"
     }
     return render(request, 'signtext/learn_page.html', context)
 
