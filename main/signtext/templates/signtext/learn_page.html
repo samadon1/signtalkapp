@@ -62,6 +62,8 @@
                     
                     <p>{{ sign }}</p>
 
+                    <p id="output"></p>
+
                     
                 </div>
             </div>
@@ -86,6 +88,39 @@
         </div>
         
     </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <script>
+        function loadlink() {
+            let url = "/update_session/";
+            $.ajax({
+                url: 'update_session',
+                type: "GET",
+                dataType: "json",
+                success: (data) => {
+                    // console.log(data);
+                    // JSON = JSON.stringify(data)
+                    var str = '';
+                    for (var p in data) {
+                        if (Object.prototype.hasOwnProperty.call(data, p)) {
+                            str +=  data[p] + ' \n';
+                        }
+                    }
+
+                    document.getElementById('output').innerHTML = str.replaceAll(',', ' ');
+                },
+                error: (error) => {
+                    console.log(error);
+                }
+            });
+        }
+
+        loadlink(); // This will run on page load
+        setInterval(function () {
+            loadlink() // this will run after every 5 seconds
+        }, 100);
+    </script>
 
 </body>
 
