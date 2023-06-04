@@ -25,7 +25,7 @@ s = SessionStore()
 
 
 module_dir = os.path.dirname(__file__)   #get current directory
-model_path = os.path.join(module_dir, 'static/model_v1.h5')
+model_path = os.path.join(module_dir, 'static/signmodel.h5')
 labels_path = os.path.join(module_dir, 'static/labels.npy')
 sequence_path = os.path.join(module_dir, 'static/max_len.npy')
 
@@ -143,7 +143,7 @@ def gen(request, camera):
         yield(b'--frame\r\n'
                 b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
         
-        # get_landmarks_predictions(request, image) #-- change this 
+        get_landmarks_predictions(request, image) #-- change this 
         request.session.modified = True
 
 
